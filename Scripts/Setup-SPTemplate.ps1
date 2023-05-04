@@ -14,7 +14,7 @@ None.
 .OUTPUTS
 None.
 .EXAMPLE
-PS> .\Setup-SP-Template.ps1
+PS> .\Setup-SPTemplate.ps1
 #>
 ### GLOBAL VARIABLES
 $Branch = "development"
@@ -24,10 +24,11 @@ $ListName = $null
 $SPSiteURL = $null
 $DF_URL = ""
 $DFOutput = ".\Version History - Bronze.json"
-$DFUtilsURI = "https://raw.githubusercontent.com/kerski/powerbi-powershell/master/examples/dataflows/DFUtils.psm1"
-$GraphURI = "https://raw.githubusercontent.com/kerski/powerbi-powershell/master/examples/dataflows/Graph.psm1"
-$ImportURI = "https://raw.githubusercontent.com/kerski/powerbi-powershell/master/examples/dataflows/ImportModel.ps1"
-
+$DFUtilsURI = "https://raw.githubusercontent.com/kerski/power-query-sharepoint-version-history/$($Branch)/Scripts/DFUtils.psm1"
+$GraphURI = "https://raw.githubusercontent.com/kerski/power-query-sharepoint-version-history/$($Branch)/Scripts/Graph.psm1"
+$ImportURI = "https://raw.githubusercontent.com/kerski/power-query-sharepoint-version-history/$($Branch)/Scripts/ImportModel.ps1"
+$TemplateURI = "https://raw.githubusercontent.com/kerski/power-query-sharepoint-version-history/$($Branch)/SharePoint%20-%20Version%20History%20Template%20-%20Bronze.json"
+$FileLocation = "./SharePoint - Version History Template - Bronze.json"
 ### UPDATE VARIABLES HERE thru Read-Host
 # Set Workspace Name
 $WorkspaceName = Read-Host "Please enter the name of the Power BI Workspace"
@@ -51,9 +52,8 @@ Write-Host -ForegroundColor Cyan "Downloading scripts and dataflow template from
 Invoke-WebRequest -Uri $DFUtilsURI -OutFile "./DFUtils.psm1"
 Invoke-WebRequest -Uri $GraphURI -OutFile "./Graph.psm1"
 Invoke-WebRequest -Uri $ImportURI -OutFile "./ImportModel.ps1"
-
-#Download file
-$FileLocation = ".\SharePoint - Version History Template - Bronze.json"
+#Download Template
+Invoke-WebRequest -Uri $TemplateURI -OutFile $FileLocation
 
 (Get-Content $FileLocation) -replace $SharePointURLKeyword, $SPSiteURL | Set-Content $DFOutput -Force
 (Get-Content $DFOutput) -replace $ListNameKeyword, $ListName | Set-Content $DFOutput -Force
@@ -76,3 +76,5 @@ if(!$WS){
 
 #Upload Bronze Data Flow
 .\ImportModel.ps1 -Workspace $WS.name -File $DFOutput
+
+Write-Host -ForegroundColor Green "Dataflow Template successfully uploaded to $($WS.name)"
