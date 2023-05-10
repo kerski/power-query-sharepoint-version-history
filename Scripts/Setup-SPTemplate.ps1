@@ -33,7 +33,7 @@ $FileLocation = "./SharePoint - Version History Template - Bronze.json"
 # Set Workspace Name
 $WorkspaceName = Read-Host "Please enter the name of the Power BI Workspace"
 # Paste the URL of the SharePoint list
-$Location = Read-Host "Please past the URL of the SharePoint list."
+$Location = Read-Host "Please past the URL of the SharePoint list"
 
 $ListNameResults = ($Location | Select-String -Pattern '/Lists/([^/]+)(?:/|$)' -AllMatches)
 
