@@ -7,8 +7,7 @@ For those who don't know, a SharePoint list (and document library) can
 be configured to store prior versions of a list item/document. In fact,
 if you use SharePoint Online and created a list then this feature should
 be enabled with a default of 500 versions. At the time of this writing
-the maximum number of versions allowed under this feature [is
-50,000](https://support.microsoft.com/en-us/office/how-versioning-works-in-lists-and-libraries-0f6cd105-974f-44a4-aadb-43ac5bdfd247).
+the maximum number of versions allowed under this feature <a href="https://support.microsoft.com/en-us/office/how-versioning-works-in-lists-and-libraries-0f6cd105-974f-44a4-aadb-43ac5bdfd247" target="_blank">is 50,000</a>.
 
 From an analytics perspective this means you could evaluate the changes
 in a list item's column values to do a time series analysis. This
@@ -22,7 +21,7 @@ one issue, what if you wanted to know how many hours it takes, on
 average, for issues to have their status change from New to In progress?
 That's where Power BI can help.
 
-![Example version history of a SharePoint list item](documentation\images\Figure1.png)
+![Example version history of a SharePoint list item](.\documentation\images\Figure1.png)
 
 Figure 1: Example version history of a SharePoint list item
 
@@ -123,7 +122,7 @@ To implement this dataflow, please follow the directions below.
 6.  If the script ran successfully you will be presented with a message
     similar in the image below.
 
-![Figure 3](documentation/images/Figure3.png){width="5.322956036745407in" height="0.3125021872265967in"}
+<img src="documentation/images/Figure3.png" alt="Figure 3" style="border: 1px solid black;" width="5.322956036745407in" height="0.3125021872265967in">
 
 Figure 3 - Example of successfully completed installation script.
 
