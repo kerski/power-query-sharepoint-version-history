@@ -21,7 +21,7 @@ one issue, what if you wanted to know how many hours it takes, on
 average, for issues to have their status change from New to In progress?
 That's where Power BI can help.
 
-![Example version history of a SharePoint list item](documentation\images\Figure1.png)
+![Example version history of a SharePoint list item](./documentation/images/Figure1.png)
 
 Figure 1: Example version history of a SharePoint list item
 
@@ -65,7 +65,7 @@ the Bronze Layer and I provide you with instructions to get
 started on your Silver Layer</i></b>. After that, it's up to you to finish
 building the Silver Layer and complete the Gold Layer.
 
-![Figure 2](documentation/images/Figure2.png)
+![Figure 2](./documentation/images/Figure2.png)
 
 Figure 2 - Medallion approach to ingesting SharePoint version history and Power BI dataflow.
 
@@ -122,22 +122,22 @@ To implement this dataflow, please follow the directions below.
 6.  If the script ran successfully you will be presented with a message
     similar in the image below.
 
-![Figure 3](documentation/images/Figure3.png)
+![Figure 3](./documentation/images/Figure3.png)
 
 Figure 3 - Example of successfully completed installation script.
 
 7.  Navigate to the workspace where the dataflow was imported.
 
-![Figure 4](documentation/images/Figure4.png){width="2.9062707786526683in"
-height="1.4687609361329834in"}
+![Figure 4](./documentation/images/Figure4.png | width="2.9062707786526683in"
+height="1.4687609361329834in")
 
 Figure 4 - Screenshot of dataflow uploaded
 
 8.  Navigate to the additional options ("...") and select the "Settings"
     option.
 
-![Figure 5](documentation/images/Figure5.png){width="2.6666863517060366in"
-height="1.9427220034995625in"}
+![Figure 5](./documentation/images/Figure5.png | width="2.6666863517060366in"
+height="1.9427220034995625in")
 
 Figure 5 - Dataset Settings
 
