@@ -153,10 +153,8 @@ Figure 6 - Data source credentials panel
     to Organizational and "Skip test connection". Then press the "Sign
     in" button and login with the appropriate credentials.
 
-![Figure 7](./documentation/images/Figure7.png | width="3.426388888888889in"
-height="3.2131944444444445in")
-
-Figure 7 -  Screenshot for configuring credentials
+![Figure 7](./documentation/images/Figure7.png | width=200)
+*Figure 7 -  Screenshot for configuring credentials*
 
 11. Return back to the workspace screen and issue a manual refresh.
     Depending on the size of your list and the number of versions this
@@ -186,9 +184,9 @@ around the 429 issues.
     10000". Just be sure to stagger refresh times so they run right
     after another.
 
-![Figure 8](documentation/images/Figure8.png | width="6.5in" height="1.0416666666666667in")
+![Figure 8](documentation/images/Figure8.png | width=200)
 
-Figure 8 - ID Filter limits the list items you retrieve.
+*Figure 8 - ID Filter limits the list items you retrieve.*
 
 2)  **Option 2 - Incremental Refresh** -- Now normally I would go to
     this option first for SQL connections but calling the SharePoint API
@@ -202,10 +200,9 @@ Figure 8 - ID Filter limits the list items you retrieve.
     you have applied an appropriate "Refresh rows from the past" setting
     (e.g., 2-3 days).
 
-![Figure 9](documentation/images/Figure9.png | width="3.124945319335083in"
-height="3.914691601049869in")
+![Figure 9](documentation/images/Figure9.png | width=200)
 
-Figure 9 - Incremental Refresh window
+*Figure 9 - Incremental Refresh window*
 
 ## Guidance on Silver Layer
 
@@ -219,9 +216,9 @@ to the Silver Layer, chances are you will encounter locking issues
 You'll need to disable the link and then coordinate refreshes
 accordingly between your Bronze and Silver Layer.
 
-![Figure 10](documentation/images/Figure10.png)
+![Figure 10](documentation/images/Figure10.png | width=200)
 
-Figure 10 - Screenshot to start creating your data flow by choosing "Link tables from other dataflows"
+*Figure 10 - Screenshot to start creating your data flow by choosing "Link tables from other dataflows"*
 
 2\. Follow the steps to pull in the Bronze Layer dataflow from the
 appropriate workspace.
@@ -230,25 +227,21 @@ appropriate workspace.
 table by right-clicking on the linked table labelled "Version History
 Results" and select the option below (see Figure below).
 
-![Figure 11](documentation/images/Figure11.png | width="3.9243055555555557in"
-height="3.7916666666666665in")
+![Figure 11](documentation/images/Figure11.png | width=200)
 
-Figure 11 - Reference linked table
+*Figure 11 - Reference linked table*
 
 4\. Select the Version JSON file in the newly reference table and apply
 the Text transform to JSON (see Figure below).
 
-![Figure 12](documentation/images/Figure12.png | width="6.497916666666667in"
-height="3.4833333333333334in")
-
-Figure 12 - Transform to JSON
+![Figure 12](documentation/images/Figure12.png | width=200)
+*Figure 12 - Transform to JSON*
 
 5\. Now expand the records (see Figure below)
 
-![Figure 13](documentation/images/Figure13.png | width="4.281281714785652in"
-height="3.4375251531058617in")
+![Figure 13](documentation/images/Figure13.png | width=200)
 
-Figure 13 - Screenshot to expand records.
+*Figure 13 - Screenshot to expand records.*
 
 6\. From here you should unpivot the expanded columns, so you have a row
 representing each list item, the version number, the column and the
@@ -257,10 +250,9 @@ sure to read Rick De Groot's article [on handling null
 values](https://gorilla.bi/power-query/unpivot-and-keep-null-values/) so
 columns with null values are preserved before the unpivot operation.
 
-![Figure 14](documentation/images/Figure14.png | width="6.5in"
-height="1.6708333333333334in")
+![Figure 14](documentation/images/Figure14.png)
 
-Figure 14 - Example of unpivot version history
+*Figure 14 - Example of unpivot version history*
 
 From here you'll need to structure your analysis based on your
 requirements.
