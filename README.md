@@ -122,7 +122,7 @@ To implement this dataflow, please follow the directions below.
 6.  If the script ran successfully you will be presented with a message
     similar in the image below.
 
-<img src="documentation/images/Figure3.png" alt="Figure 3" style="border: 1px solid black;" width="5.322956036745407in" height="0.3125021872265967in">
+<img src="documentation/images/Figure3.png" alt="Figure 3" style="border: 1px solid black;" width="5.322956036745407in" height="0.3125021872265967in"/>
 
 Figure 3 - Example of successfully completed installation script.
 
