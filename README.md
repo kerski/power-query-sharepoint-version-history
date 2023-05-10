@@ -38,7 +38,7 @@ be a challenge because:
 
 To overcome these challenges, this solution combines the lessons learned
 from <a href="https://github.com/kerski/power-query-sharepoint-faster-easier" target="_blank">power-query-sharepoint-faster-easier</a>
-and the capabilities of Power BI dataflow to store SharePoint list item
+and the capabilities of Power BI dataflows to store SharePoint list item
 versions for analytic needs. Table 1 outlines how each challenge is
 addressed with this solution.
 
@@ -46,6 +46,8 @@ addressed with this solution.
 | --------- | -------- |
 | Learning Curve | Leverage the techniques from <a href="https://github.com/kerski/power-query-sharepoint-faster-easier" target="_blank">A Faster (Easier?) way to import SharePoint list data into Power BI</a> to make generating the OData queries a low-code (easier) experience. |
 | Text Limit | With Power BI dataflows, we can store data in text columns well over 32,766. I tried to find the theoretical limit documented, but I could not. However, I tested text columns close to 2 million records and I had no truncation in a Power BI dataflow. |
+
+*Table 1 - Overcoming the challenges with ingesting SharePoint version history into Power BI.*
 
 The solution uses the <a href="https://learn.microsoft.com/en-us/azure/databricks/lakehouse/medallion" target="_blank">Medallion architecture</a>
 which separates responsibilities of each Power BI dataflow to support
@@ -67,7 +69,7 @@ building the Silver Layer and complete the Gold Layer.
 
 ![Figure 2](./documentation/images/Figure2.png)
 
-*Figure 2 - Medallion approach to ingesting SharePoint version history and Power BI dataflow.*
+*Figure 2 - Medallion approach to ingesting SharePoint version history into a Power BI dataflow.*
 
 ## Bronze Layer Implementation
 
@@ -161,8 +163,8 @@ To implement this dataflow, please follow the directions below.
 
 ## 429 -- Too Many Requests
 
-For large lists (greater than 5,000) I've seen refreshes get the
-throttled by the SharePoint API. Unfortunately, this solution is not
+For large lists (greater than 5,000) I've seen dataflow refreshes get
+throttled by the SharePoint API as indicated by an HTTP Status code of 429.  When this occurs, the refresh will fail. Unfortunately, this solution is not
 capable of natively avoiding this issue because the capability known as
 <a href="https://learn.microsoft.com/en-us/power-query/handling-status-codes" target="_blank">ManualStatusHandling</a>
 is only available for anonymous connections (and we need to use OAuth2
