@@ -23,7 +23,7 @@ That's where Power BI can help.
 
 ![Example version history of a SharePoint list item](./documentation/images/Figure1.png)
 
-Figure 1: Example version history of a SharePoint list item
+*Figure 1: Example version history of a SharePoint list item*
 
 ## The Challenge
 
@@ -67,7 +67,7 @@ building the Silver Layer and complete the Gold Layer.
 
 ![Figure 2](./documentation/images/Figure2.png)
 
-Figure 2 - Medallion approach to ingesting SharePoint version history and Power BI dataflow.
+*Figure 2 - Medallion approach to ingesting SharePoint version history and Power BI dataflow.*
 
 ## Bronze Layer Implementation
 
@@ -124,36 +124,33 @@ To implement this dataflow, please follow the directions below.
 
 ![Figure 3](./documentation/images/Figure3.png)
 
-Figure 3 - Example of successfully completed installation script.
+*Figure 3 - Example of successfully completed installation script.*
 
 7.  Navigate to the workspace where the dataflow was imported.
 
-![Figure 4](./documentation/images/Figure4.png | width="2.9062707786526683in"
-height="1.4687609361329834in")
+![Figure 4](./documentation/images/Figure4.png)
 
-Figure 4 - Screenshot of dataflow uploaded
+*Figure 4 - Screenshot of dataflow uploaded*
 
 8.  Navigate to the additional options ("...") and select the "Settings"
     option.
 
-![Figure 5](./documentation/images/Figure5.png | width="2.6666863517060366in"
-height="1.9427220034995625in")
+![Figure 5](./documentation/images/Figure5.png)
 
-Figure 5 - Dataset Settings
+*Figure 5 - Dataset Settings*
 
 9.  Edit the Data Source Credentials and login with the appropriate
     account within your tenant.
 
-![Figure 6](./documentation/images/Figure6.png | width="6.5in"
-height="0.9868055555555556in")
+![Figure 6](./documentation/images/Figure6.png)
 
-Figure 6 - Data source credentials panel
+*Figure 6 - Data source credentials panel*
 
 10. Make sure to set the Authentication method to Oauth2, privacy level
     to Organizational and "Skip test connection". Then press the "Sign
     in" button and login with the appropriate credentials.
 
-![Figure 7](./documentation/images/Figure7.png | width=200)
+![Figure 7](./documentation/images/Figure7.png)
 *Figure 7 -  Screenshot for configuring credentials*
 
 11. Return back to the workspace screen and issue a manual refresh.
@@ -184,7 +181,7 @@ around the 429 issues.
     10000". Just be sure to stagger refresh times so they run right
     after another.
 
-![Figure 8](documentation/images/Figure8.png | width=200)
+![Figure 8](documentation/images/Figure8.png)
 
 *Figure 8 - ID Filter limits the list items you retrieve.*
 
@@ -200,7 +197,7 @@ around the 429 issues.
     you have applied an appropriate "Refresh rows from the past" setting
     (e.g., 2-3 days).
 
-![Figure 9](documentation/images/Figure9.png | width=200)
+![Figure 9](documentation/images/Figure9.png)
 
 *Figure 9 - Incremental Refresh window*
 
@@ -216,7 +213,7 @@ to the Silver Layer, chances are you will encounter locking issues
 You'll need to disable the link and then coordinate refreshes
 accordingly between your Bronze and Silver Layer.
 
-![Figure 10](documentation/images/Figure10.png | width=200)
+![Figure 10](documentation/images/Figure10.png)
 
 *Figure 10 - Screenshot to start creating your data flow by choosing "Link tables from other dataflows"*
 
@@ -227,19 +224,19 @@ appropriate workspace.
 table by right-clicking on the linked table labelled "Version History
 Results" and select the option below (see Figure below).
 
-![Figure 11](documentation/images/Figure11.png | width=200)
+![Figure 11](documentation/images/Figure11.png)
 
 *Figure 11 - Reference linked table*
 
 4\. Select the Version JSON file in the newly reference table and apply
 the Text transform to JSON (see Figure below).
 
-![Figure 12](documentation/images/Figure12.png | width=200)
+![Figure 12](documentation/images/Figure12.png)
 *Figure 12 - Transform to JSON*
 
 5\. Now expand the records (see Figure below)
 
-![Figure 13](documentation/images/Figure13.png | width=200)
+![Figure 13](documentation/images/Figure13.png)
 
 *Figure 13 - Screenshot to expand records.*
 
