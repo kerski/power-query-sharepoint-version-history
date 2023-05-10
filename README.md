@@ -130,28 +130,28 @@ To implement this dataflow, please follow the directions below.
 
 ![Figure 4](./documentation/images/Figure4.png)
 
-*Figure 4 - Screenshot of dataflow uploaded*
+*Figure 4 - Screenshot of dataflow uploaded.*
 
 8.  Navigate to the additional options ("...") and select the "Settings"
     option.
 
 ![Figure 5](./documentation/images/Figure5.png)
 
-*Figure 5 - Dataset Settings*
+*Figure 5 - Dataset Settings.*
 
 9.  Edit the Data Source Credentials and login with the appropriate
     account within your tenant.
 
 ![Figure 6](./documentation/images/Figure6.png)
 
-*Figure 6 - Data source credentials panel*
+*Figure 6 - Data source credentials panel.*
 
 10. Make sure to set the Authentication method to Oauth2, privacy level
     to Organizational and "Skip test connection". Then press the "Sign
     in" button and login with the appropriate credentials.
 
 ![Figure 7](./documentation/images/Figure7.png)
-*Figure 7 -  Screenshot for configuring credentials*
+*Figure 7 -  Screenshot for configuring credentials.*
 
 11. Return back to the workspace screen and issue a manual refresh.
     Depending on the size of your list and the number of versions this
@@ -199,7 +199,7 @@ around the 429 issues.
 
 ![Figure 9](documentation/images/Figure9.png)
 
-*Figure 9 - Incremental Refresh window*
+*Figure 9 - Incremental Refresh window.*
 
 ## Guidance on Silver Layer
 
@@ -226,13 +226,13 @@ Results" and select the option below (see Figure below).
 
 ![Figure 11](documentation/images/Figure11.png)
 
-*Figure 11 - Reference linked table*
+*Figure 11 - Reference linked table.*
 
 4\. Select the Version JSON file in the newly reference table and apply
 the Text transform to JSON (see Figure below).
 
 ![Figure 12](documentation/images/Figure12.png)
-*Figure 12 - Transform to JSON*
+*Figure 12 - Transform to JSON.*
 
 5\. Now expand the records (see Figure below)
 
@@ -249,7 +249,7 @@ columns with null values are preserved before the unpivot operation.
 
 ![Figure 14](documentation/images/Figure14.png)
 
-*Figure 14 - Example of unpivot version history*
+*Figure 14 - Example of unpivot version history.*
 
 From here you'll need to structure your analysis based on your
 requirements.
