@@ -21,7 +21,7 @@ one issue, what if you wanted to know how many hours it takes, on
 average, for issues to have their status change from New to In progress?
 That's where Power BI can help.
 
-![Example version history of a SharePoint list item](.\documentation\images\Figure1.png)
+![Example version history of a SharePoint list item](documentation\images\Figure1.png)
 
 Figure 1: Example version history of a SharePoint list item
 
@@ -122,7 +122,7 @@ To implement this dataflow, please follow the directions below.
 6.  If the script ran successfully you will be presented with a message
     similar in the image below.
 
-<img src="documentation/images/Figure3.png" alt="Figure 3" style="border: 1px solid black;" width="5.322956036745407in" height="0.3125021872265967in"/>
+![Figure 3](documentation/images/Figure3.png)
 
 Figure 3 - Example of successfully completed installation script.
 
