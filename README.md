@@ -144,8 +144,8 @@ Figure 5 - Dataset Settings
 9.  Edit the Data Source Credentials and login with the appropriate
     account within your tenant.
 
-![Figure 6](documentation/images/Figure6.png){width="6.5in"
-height="0.9868055555555556in"}
+![Figure 6](./documentation/images/Figure6.png | width="6.5in"
+height="0.9868055555555556in")
 
 Figure 6 - Data source credentials panel
 
@@ -153,8 +153,8 @@ Figure 6 - Data source credentials panel
     to Organizational and "Skip test connection". Then press the "Sign
     in" button and login with the appropriate credentials.
 
-![Figure 7](documentation/images/Figure7.png){width="3.426388888888889in"
-height="3.2131944444444445in"}
+![Figure 7](./documentation/images/Figure7.png | width="3.426388888888889in"
+height="3.2131944444444445in")
 
 Figure 7 -  Screenshot for configuring credentials
 
@@ -186,7 +186,7 @@ around the 429 issues.
     10000". Just be sure to stagger refresh times so they run right
     after another.
 
-![Figure 8](documentation/images/Figure8.png){width="6.5in" height="1.0416666666666667in"}
+![Figure 8](documentation/images/Figure8.png | width="6.5in" height="1.0416666666666667in")
 
 Figure 8 - ID Filter limits the list items you retrieve.
 
@@ -202,8 +202,8 @@ Figure 8 - ID Filter limits the list items you retrieve.
     you have applied an appropriate "Refresh rows from the past" setting
     (e.g., 2-3 days).
 
-![Figure 9](documentation/images/Figure9.png){width="3.124945319335083in"
-height="3.914691601049869in"}
+![Figure 9](documentation/images/Figure9.png | width="3.124945319335083in"
+height="3.914691601049869in")
 
 Figure 9 - Incremental Refresh window
 
@@ -230,23 +230,23 @@ appropriate workspace.
 table by right-clicking on the linked table labelled "Version History
 Results" and select the option below (see Figure below).
 
-![Figure 11](documentation/images/Figure11.png){width="3.9243055555555557in"
-height="3.7916666666666665in"}
+![Figure 11](documentation/images/Figure11.png | width="3.9243055555555557in"
+height="3.7916666666666665in")
 
 Figure 11 - Reference linked table
 
 4\. Select the Version JSON file in the newly reference table and apply
 the Text transform to JSON (see Figure below).
 
-![Figure 12](documentation/images/Figure12.png){width="6.497916666666667in"
-height="3.4833333333333334in"}
+![Figure 12](documentation/images/Figure12.png | width="6.497916666666667in"
+height="3.4833333333333334in")
 
 Figure 12 - Transform to JSON
 
 5\. Now expand the records (see Figure below)
 
-![Figure 13](documentation/images/Figure13.png){width="4.281281714785652in"
-height="3.4375251531058617in"}
+![Figure 13](documentation/images/Figure13.png | width="4.281281714785652in"
+height="3.4375251531058617in")
 
 Figure 13 - Screenshot to expand records.
 
@@ -257,8 +257,8 @@ sure to read Rick De Groot's article [on handling null
 values](https://gorilla.bi/power-query/unpivot-and-keep-null-values/) so
 columns with null values are preserved before the unpivot operation.
 
-![Figure 14](documentation/images/Figure14.png){width="6.5in"
-height="1.6708333333333334in"}
+![Figure 14](documentation/images/Figure14.png | width="6.5in"
+height="1.6708333333333334in")
 
 Figure 14 - Example of unpivot version history
 
