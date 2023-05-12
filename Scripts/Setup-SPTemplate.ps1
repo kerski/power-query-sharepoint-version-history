@@ -57,7 +57,7 @@ if (!$ListNameResults)
     Throw "We could not extract the list name from the URL $($Location)."} else {  
     $SPSiteURL = $Location.SubString(0,$ListNameResults.Matches.Groups[1].Index - 7)
     # Connect to SharePoint
-    Connect-PnPOnline $SPSiteURL -Interactive
+    Connect-PnPOnline $SPSiteURL -UseWebLogin
     $ListNameResultsDecoded = [System.Web.HttpUtility]::UrlDecode($ListNameResults.Matches.Groups[1].Value)
     $ListNameSearch = Get-PnPList | Where-Object {$_.DefaultViewUrl.ToString() -like "*/lists/$($ListNameResultsDecoded)*"}
    
