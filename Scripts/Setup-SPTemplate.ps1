@@ -29,6 +29,22 @@ $GraphURI = "https://raw.githubusercontent.com/kerski/power-query-sharepoint-ver
 $ImportURI = "https://raw.githubusercontent.com/kerski/power-query-sharepoint-version-history/$($Branch)/Scripts/ImportModel.ps1"
 $TemplateURI = "https://raw.githubusercontent.com/kerski/power-query-sharepoint-version-history/$($Branch)/SharePoint%20-%20Version%20History%20Template%20-%20Bronze.json"
 $FileLocation = "./SharePoint - Version History Template - Bronze.json"
+### Install dependencies
+#Install Powershell Module if Needed
+if (Get-Module -ListAvailable -Name "MicrosoftPowerBIMgmt") {
+    Write-Host "MicrosoftPowerBIMgmt installed moving forward"
+} else {
+    #Install Power BI Module
+    Install-Module -Name MicrosoftPowerBIMgmt -Scope CurrentUser -AllowClobber -Force
+}
+
+if (Get-Module -ListAvailable -Name "PnP.PowerShell") {
+    Write-Host "PnP.PowerShell installed moving forward"
+} else {
+    #Install Power BI Module
+    Install-Module -Name PnP.PowerShell -Scope CurrentUser -AllowClobber -Force
+}
+
 ### UPDATE VARIABLES HERE thru Read-Host
 # Set Workspace Name
 $WorkspaceName = Read-Host "Please enter the name of the Power BI Workspace"
@@ -36,13 +52,22 @@ $WorkspaceName = Read-Host "Please enter the name of the Power BI Workspace"
 $Location = Read-Host "Please past the URL of the SharePoint list"
 
 $ListNameResults = ($Location | Select-String -Pattern '/Lists/([^/]+)(?:/|$)' -AllMatches)
-
 if (!$ListNameResults)
 {
-    Throw "We could not extract the list name from the URL $($Location)."} else {
-    $ListName = $ListNameResults.Matches.Groups[1].Value
+    Throw "We could not extract the list name from the URL $($Location)."} else {   
     $SPSiteURL = $Location.SubString(0,$ListNameResults.Matches.Groups[1].Index - 7)
-}
+    # Connect to SharePoint
+    Connect-PnPOnline $SPSiteURL -Interactive
+    $ListNameSearch = Get-PnPList | Where-Object {$_.DefaultViewUrl.ToString() -like "*/lists/$($ListNameResults.Matches.Groups[1].Value)*"}
+    
+    if(!$ListNameSearch)
+    {
+        Throw "We could not locate the list name from the URL $($Location)."
+    }#end if
+
+    $ListName = $ListNameSearch[0].Title
+} #end if
+
 
 Write-Host -ForegroundColor Cyan "Updating the Power BI dataflow template for the $($ListName) list in $($SPSiteURL)"
 
@@ -58,13 +83,6 @@ Invoke-WebRequest -Uri $TemplateURI -OutFile $FileLocation
 (Get-Content $FileLocation) -replace $SharePointURLKeyword, $SPSiteURL | Set-Content $DFOutput -Force
 (Get-Content $DFOutput) -replace $ListNameKeyword, $ListName | Set-Content $DFOutput -Force
 
-#Install Powershell Module if Needed
-if (Get-Module -ListAvailable -Name "MicrosoftPowerBIMgmt") {
-    Write-Host "MicrosoftPowerBIMgmt installed moving forward"
-} else {
-    #Install Power BI Module
-    Install-Module -Name MicrosoftPowerBIMgmt -Scope CurrentUser -AllowClobber -Force
-}
 #Login into Power BI to Get Workspace Information
 Login-PowerBI
 
