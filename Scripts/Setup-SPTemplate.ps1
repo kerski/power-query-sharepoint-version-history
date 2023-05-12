@@ -4,7 +4,7 @@ Performs installation of Version History Template - Bronze; a Power BI Dataflow
 .DESCRIPTION
     Description: This script:
         1) Upload sample Power BI Dataflow to the Power BI workspace
-        Dependencies: 
+        Dependencies:
             1) Power BI Powershell installed
             2) ImportModel.ps1
          
@@ -54,12 +54,13 @@ $Location = Read-Host "Please past the URL of the SharePoint list"
 $ListNameResults = ($Location | Select-String -Pattern '/Lists/([^/]+)(?:/|$)' -AllMatches)
 if (!$ListNameResults)
 {
-    Throw "We could not extract the list name from the URL $($Location)."} else {   
+    Throw "We could not extract the list name from the URL $($Location)."} else {  
     $SPSiteURL = $Location.SubString(0,$ListNameResults.Matches.Groups[1].Index - 7)
     # Connect to SharePoint
     Connect-PnPOnline $SPSiteURL -Interactive
-    $ListNameSearch = Get-PnPList | Where-Object {$_.DefaultViewUrl.ToString() -like "*/lists/$($ListNameResults.Matches.Groups[1].Value)*"}
-    
+    $ListNameResultsDecoded = [System.Web.HttpUtility]::UrlDecode($ListNameResults.Matches.Groups[1].Value)
+    $ListNameSearch = Get-PnPList | Where-Object {$_.DefaultViewUrl.ToString() -like "*/lists/$($ListNameResultsDecoded)*"}
+   
     if(!$ListNameSearch)
     {
         Throw "We could not locate the list name from the URL $($Location)."
