@@ -87,6 +87,8 @@ To implement this dataflow, please follow the directions below.
 
 ### Prerequisites
 
+*Please note that this solution has been tested for Microsoft 365 Commercial.  Please let me know if you'd like to try this with a Sovereign Cloud tenant.*
+
 #### Power BI
 
 -   A premium workspace or premium per user workspace in Power BI is
