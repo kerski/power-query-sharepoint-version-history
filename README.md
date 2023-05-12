@@ -10,6 +10,7 @@ Power BI Dataflow template for capturing version history for SharePoint using th
     1. [Prerequisites](#prerequisites)
     1. [Installation](#installation)
 1. [429 -- Too Many Requests](#429----too-many-requests)
+1. [Guidance on Silver Layer](#guidance-on-silver-layer)
 
 ## Background
 
