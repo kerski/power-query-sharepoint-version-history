@@ -98,7 +98,7 @@ To implement this dataflow, please follow the directions below.
 
 2.  Invoke-WebRequest -Uri
     \"https://raw.githubusercontent.com/kerski/power-query-sharepoint-version-history/development/Scripts/Setup-SPTemplate.ps1\"
-    -OutFile \".\\Setup-SPTemplate.ps1\"
+    -OutFile \".\\Setup-SPTemplate.ps1"
 
 3.  This will download the setup scripts to the current folder. Run
     .\\Setup-SPTemplate.ps1 in PowerShell. Please note that depending on
@@ -109,12 +109,10 @@ To implement this dataflow, please follow the directions below.
 4.  During the install process you will be prompted to enter the
     following information:
 
-    a.  The URL of the SharePoint site that contains the list you want
-        to pull version history from.
+    a.  The name of the workspace to import the dataflow.
 
-    b.  The SharePoint list name.
-
-    c.  The GUID of the premium or premium per user workspace.
+    b.  The URL of the SharePoint site that contains the list you want
+        to pull version history from. (e.g, https://X.sharepoint.com/sites/Site/Lists/IssueTracker/AllItems.aspx)
 
 5.  During the course of the install you may be prompted to enter your
     Microsoft 365 credentials. Depending on your environment you may
