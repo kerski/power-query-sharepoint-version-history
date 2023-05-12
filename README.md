@@ -102,6 +102,8 @@ To implement this dataflow, please follow the directions below.
     For the purposes of the instructions, I\'m going to use PowerShell
     ISE to run a PowerShell script.
 
+-  PnP PowerShell and Power BI PowerShell Modules will be installed for the Current User automatically if not found.
+
 ### Installation
 
 1.  Open PowerShell Version 7 and enter the following script:
