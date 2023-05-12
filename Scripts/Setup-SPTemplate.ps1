@@ -17,7 +17,7 @@ None.
 PS> .\Setup-SPTemplate.ps1
 #>
 ### GLOBAL VARIABLES
-$Branch = "development"
+$Branch = "main"
 $SharePointURLKeyword = "\|SHAREPOINT_URL\|"
 $ListNameKeyword = "\|LIST_NAME\|"
 $ListName = $null

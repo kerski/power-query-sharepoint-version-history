@@ -112,7 +112,7 @@ To implement this dataflow, please follow the directions below.
 1.  Open PowerShell Version 7 and enter the following script:
 
 2.  Invoke-WebRequest -Uri
-    \"https://raw.githubusercontent.com/kerski/power-query-sharepoint-version-history/development/Scripts/Setup-SPTemplate.ps1"
+    \"https://raw.githubusercontent.com/kerski/power-query-sharepoint-version-history/main/Scripts/Setup-SPTemplate.ps1"
     -OutFile \".\\Setup-SPTemplate.ps1"
 
 3.  This will download the setup scripts to the current folder. Run
