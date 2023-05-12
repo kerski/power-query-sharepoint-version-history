@@ -1,6 +1,16 @@
 # power-query-sharepoint-version-history
 Power BI Dataflow template for capturing version history for SharePoint using the Medallion architecture approach.
 
+## Table of Contents
+
+1. [Background](#background)
+1. [The Challenge](#the-challenge)
+1. [Potential Solution](#potential-solution)
+1. [Bronze Layer Implementation](#bronze-layer-implementation)
+    1. [Prerequisites](#prerequisites)
+    1. [Installation](#installation)
+1. [429 -- Too Many Requests](#429----too-many-requests)
+
 ## Background
 
 For those who don't know, a SharePoint list (and document library) can
