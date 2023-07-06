@@ -49,7 +49,7 @@ if (Get-Module -ListAvailable -Name "PnP.PowerShell") {
 # Set Workspace Name
 $WorkspaceName = Read-Host "Please enter the name of the Power BI Workspace"
 # Paste the URL of the SharePoint list
-$Location = Read-Host "Please past the URL of the SharePoint list"
+$Location = Read-Host "Please paste the URL of the SharePoint list"
 
 $ListNameResults = ($Location | Select-String -Pattern '/Lists/([^/]+)(?:/|$)' -AllMatches)
 if (!$ListNameResults)
